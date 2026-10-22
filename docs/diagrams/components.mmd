@@ -1,0 +1,9 @@
+flowchart LR
+    C[Task intake and contract C] --> A[Agent and planner]
+    X[External data and source labels] -.-> A
+    A -->|Call a| G[Action Gateway]
+    P[OPA and RBAC policy] --> G
+    D[Plan, dry-run and diff] --> G
+    G -->|Allow| I[Typed executor]
+    G --> L[Audit log]
+    I --> L

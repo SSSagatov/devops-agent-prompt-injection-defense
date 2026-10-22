@@ -1,0 +1,6 @@
+flowchart LR
+    U[DevOps User] -->|Trusted task| A[DevOps Agent]
+    X[README, PR, CI log, IaC comments] -.->|Low-trust data| A
+    A -->|Proposed call| G[Action Gateway]
+    G -->|Approved call| I[Kubernetes, Terraform, CI Sandbox]
+    G --> L[Decision Log]
